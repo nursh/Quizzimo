@@ -4,9 +4,7 @@ import App from './App.jsx';
 
 
 render(
-	<App />,
-	document.querySelector('#root'),
+  <App />,
+  document.querySelector('#root'),
 );
-
-
 
