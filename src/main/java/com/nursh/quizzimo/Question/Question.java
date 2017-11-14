@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Entity
@@ -26,8 +27,9 @@ public class Question {
 
     }
 
-    public Question(String question, List<String> options) {
+    public Question(String question, List<String> options, String answer) {
         this.question = question;
-        options.forEach(this.options::add);
+        this.options = options.stream().collect(Collectors.toList());
+        this.answer = answer;
     }
 }
