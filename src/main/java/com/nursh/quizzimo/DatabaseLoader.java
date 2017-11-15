@@ -6,10 +6,12 @@ import com.nursh.quizzimo.Question.Question;
 import com.nursh.quizzimo.Question.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class DatabaseLoader implements CommandLineRunner{
 
     @Autowired
@@ -18,11 +20,7 @@ public class DatabaseLoader implements CommandLineRunner{
     @Autowired
     private QuestionRepository qr;
 
-    Category art = new Category("Art");
-    Category history = new Category("History");
-    Category science = new Category("Science");
-
-    public void initArt() {
+    public void initArt(Category art) {
         List<String> opts1 = Arrays.asList(
             "Vitruvius", "Praxiteles", "Apelles", "Lysippus"
         );
@@ -55,10 +53,9 @@ public class DatabaseLoader implements CommandLineRunner{
         qr.save(q2);
         qr.save(q3);
         qr.save(q4);
-        cr.save(art);
     }
 
-    public void initHistory() {
+    public void initHistory(Category history) {
         List<String> opts1 = Arrays.asList(
             "Hebrew Torah", "Shabaka Stone", "Code of Hammurabi", "Rosetta Stone"
         );
@@ -91,10 +88,9 @@ public class DatabaseLoader implements CommandLineRunner{
         qr.save(q2);
         qr.save(q3);
         qr.save(q4);
-        cr.save(history);
     }
 
-    public void initScience() {
+    public void initScience(Category science) {
         List<String> opts1 = Arrays.asList(
             "12%", "4%", "77%", "96%"
         );
@@ -127,13 +123,18 @@ public class DatabaseLoader implements CommandLineRunner{
         qr.save(q2);
         qr.save(q3);
         qr.save(q4);
-        cr.save(science);
     }
 
     @Override
     public void run(String... args) {
-        initArt();
-        initHistory();
-        initScience();
+        Category art = new Category("Art");
+        Category history = new Category("History");
+        Category science = new Category("Science");
+        cr.save(science);
+        cr.save(history);
+        cr.save(art);
+        initArt(art);
+        initHistory(history);
+        initScience(science);
     }
 }
