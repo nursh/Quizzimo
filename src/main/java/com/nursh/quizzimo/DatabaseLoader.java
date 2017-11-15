@@ -47,15 +47,15 @@ public class DatabaseLoader implements CommandLineRunner{
         Question q4 = new Question(
             "What quality is associated with peaches in Chinese art", opts4, opts4.get(3)
         );
-        q1.setCategory(science);
-        q2.setCategory(science);
-        q3.setCategory(science);
-        q4.setCategory(science);
+        q1.setCategory(art);
+        q2.setCategory(art);
+        q3.setCategory(art);
+        q4.setCategory(art);
         qr.save(q1);
         qr.save(q2);
         qr.save(q3);
         qr.save(q4);
-        cr.save(science);
+        cr.save(art);
     }
 
     public void initHistory() {
