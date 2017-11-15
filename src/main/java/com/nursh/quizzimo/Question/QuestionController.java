@@ -1,4 +1,4 @@
-package com.nursh.quizzimo.Category;
+package com.nursh.quizzimo.Question;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categories")
-public class CategoryController {
+@RequestMapping("/questions")
+public class QuestionController {
 
     @Autowired
-    private CategoryService cs;
+    private QuestionService qs;
 
     @GetMapping("")
-    public List<Category> getAll() {
-        return cs.getAllCategories();
+    public List<Question> getAllQuestions() {
+        return qs.getAllQuestions();
     }
 }
