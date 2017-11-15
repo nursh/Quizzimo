@@ -17,4 +17,11 @@ public class QuestionService {
         qr.findAll().forEach(questions::add);
         return questions;
     }
+
+    public List<Question> getQuestionsByCategory(String name) {
+        List<Question> questions = new ArrayList<>();
+        qr.findQuestionsByCategoryName(name)
+            .forEach(questions::add);
+        return questions;
+    }
 }
