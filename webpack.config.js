@@ -14,12 +14,18 @@ module.exports = {
 	},
 	output: {
 		path: PATHS.build,
-		filename: '[name].js'
+		filename: '[name].js',
 	},
 	module: {
 		rules: [
-			{ test: /\.jsx/, loader: 'babel-loader' }
-		]
+			{ test: /\.jsx$/, loader: 'babel-loader' },
+			{ test: /\.(jpg|png|svg)$/,
+				loader: 'url-loader',
+				options: {
+					limit: 8000,
+				},
+			},
+		],
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
