@@ -6,14 +6,14 @@ Simple trivia quiz project about Science, Art or History
 
 ### Description
 
-The project is a trivia site. The user is able to choose between categories(Art, History or Science).
-React front-end with Spring Boot MVC Backend
+The project is a trivia site. The user is able to choose between categories(Art, History or Science) and answer questions in that category. The user views their result after finishing the quiz. React front-end with Spring Boot MVC Backend
 
 ### Built with
 
 * Java (Spring Boot MVC)
   * JUnit
 * React
+* MaterialUI
 * Webpack
 * TravisCI
 * Gradle
