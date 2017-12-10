@@ -28,10 +28,13 @@ public class DatabaseLoader implements CommandLineRunner{
             "Gerhart Richter", "Jeff Koons", "Jasper Johns", "Christopher Wool"
         );
         List<String> opts3 = Arrays.asList(
-            "Louis Leroy", "Jacob Burckhardt", "John Ruskin", "Roger Fry"
+            "Rembrandt", "Raphael", "Titian", "Michael Angelo"
         );
         List<String> opts4 = Arrays.asList(
             "Illness", "Wealth", "Fertility", "Immortality"
+        );
+        List<String> opts5 = Arrays.asList(
+            "Pierre-Auguste Renoir", "Raphael", "Sandro Botticelli", "Georges Seurat"
         );
         Question q1 = new Question(
             "Who was the court sculptor of Alexander the Great", opts1, opts1.get(3)
@@ -40,19 +43,24 @@ public class DatabaseLoader implements CommandLineRunner{
             "What artist sold a balloon dog for $58.4million", opts2, opts2.get(1)
         );
         Question q3 = new Question(
-            "What art critic coined the term \"Impressionism\"", opts3, opts3.get(0)
+            "What artist was struck in the face with a mallet by an envious rival, disfiguring him for life", opts3, opts3.get(3)
         );
         Question q4 = new Question(
             "What quality is associated with peaches in Chinese art", opts4, opts4.get(3)
+        );
+        Question q5 = new Question(
+            "Who painted The Birth of Venus", opts5, opts5.get(2)
         );
         q1.setCategory(art);
         q2.setCategory(art);
         q3.setCategory(art);
         q4.setCategory(art);
+        q5.setCategory(art);
         qr.save(q1);
         qr.save(q2);
         qr.save(q3);
         qr.save(q4);
+        qr.save(q5);
     }
 
     public void initHistory(Category history) {
@@ -68,6 +76,9 @@ public class DatabaseLoader implements CommandLineRunner{
         List<String> opts4 = Arrays.asList(
             "Saddam Hussein", "Adolf Hitler", "Kim Jong Il", "Mao Zedong"
         );
+        List<String> opts5 = Arrays.asList(
+            "Aztec Empire", "Incan Empire", "Roman Empire", "Tang Dynasty"
+        );
         Question q1 = new Question(
             "What is the earliest surviving system of law", opts1, opts1.get(2)
         );
@@ -80,14 +91,19 @@ public class DatabaseLoader implements CommandLineRunner{
         Question q4 = new Question(
             "Which dictator composed six operas", opts4, opts4.get(2)
         );
+        Question q5 = new Question(
+            "Which of the following empires had no written language", opts5, opts5.get(2)
+        );
         q1.setCategory(history);
         q2.setCategory(history);
         q3.setCategory(history);
         q4.setCategory(history);
+        q5.setCategory(history);
         qr.save(q1);
         qr.save(q2);
         qr.save(q3);
         qr.save(q4);
+        qr.save(q5);
     }
 
     public void initScience(Category science) {
@@ -103,6 +119,9 @@ public class DatabaseLoader implements CommandLineRunner{
         List<String> opts4 = Arrays.asList(
             "Quasicrystals", "Water", "Crude Oil", "Polytetrafluoroethene"
         );
+        List<String> opts5 = Arrays.asList(
+            "4 Months", "12 Months", "8 Months", "16 Months"
+        );
         Question q1 = new Question(
           "What percent of the world is visible", opts1, opts1.get(1)
         );
@@ -115,14 +134,19 @@ public class DatabaseLoader implements CommandLineRunner{
         Question q4 = new Question(
           "What is the most slippery substance in the world", opts4, opts4.get(3)
         );
+        Question q5 = new Question(
+            "What is the gestation period of a Hippopotamus", opts5, opts5.get(2)
+        );
         q1.setCategory(science);
         q2.setCategory(science);
         q3.setCategory(science);
         q4.setCategory(science);
+        q5.setCategory(science);
         qr.save(q1);
         qr.save(q2);
         qr.save(q3);
         qr.save(q4);
+        qr.save(q5);
     }
 
     @Override
