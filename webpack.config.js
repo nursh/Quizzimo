@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 const PATHS = {
-	src: path.resolve(__dirname, 'src/main/JS'),
+	src: path.resolve(__dirname, 'src/main/JS/src'),
 	build: path.resolve(__dirname, 'src/main/resources/static/built'),
 };
 
@@ -22,7 +23,7 @@ module.exports = {
 			{ test: /\.(jpg|png|svg)$/,
 				loader: 'url-loader',
 				options: {
-					limit: 8000,
+					limit: 40000,
 				},
 			},
 		],
@@ -40,5 +41,6 @@ module.exports = {
 			name: 'manifest',
 			minChunks: Infinity,
 		}),
+		new CleanWebpackPlugin(PATHS.build),
 	],
 };
