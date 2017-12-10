@@ -92,7 +92,7 @@ public class DatabaseLoader implements CommandLineRunner{
             "Which dictator composed six operas", opts4, opts4.get(2)
         );
         Question q5 = new Question(
-            "Which of the following empires had no written language", opts5, opts5.get(2)
+            "Which of the following empires had no written language", opts5, opts5.get(1)
         );
         q1.setCategory(history);
         q2.setCategory(history);
